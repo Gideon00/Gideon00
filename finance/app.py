@@ -156,7 +156,7 @@ def buy():
 def history():
     """Show history of transactions"""
 
-    # Get rows of all transaction
+    # Get rows of all transactions
     transactions = db.execute("SELECT * FROM transactions WHERE username = ?", db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]['username'])
 
     for transaction in transactions:
