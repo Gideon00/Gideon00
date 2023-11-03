@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    {{ quote["name"] }}
+    {{ quote["symbol"] }}
+    {{ quote["price"] | usd  }}
+
+
+{% endblock %}

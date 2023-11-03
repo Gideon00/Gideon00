@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Stock Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Holdings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks_owned %}
+                <tr>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.stock }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.holdings }}</td>
+                </tr>
+            {% endfor %}
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>CASH AVAILABLE</th>
+                    <th>{{ cash }}</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Grand Total</th>
+                    <th>{{ grand_total }}</th>
+                </tr>
+            </thead>
+        </tbody>
+    </table>
+
+{% endblock %}
